@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    dsda
+    {{$wrong_answer}}
     <h1>Treść pytania {{$id}} </h1>
     <p>{{$question['question']}}</p>
     <p>Wskaż poprawną odpowiedź:</p>
@@ -33,6 +35,10 @@
         </div>
 
         <button type="submit">Wyślij </button>
+
+        @if($wrong_answer)
+            <p>Zła odpowiedź</p>
+        @endif
     </form>
 </body>
 </html>
