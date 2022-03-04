@@ -7,40 +7,28 @@ use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
-    public function index()
-    {
-        $question = \App\Question::all();
-        return view("question")->with("question", $question[0]->answer_correct);
-    }
-
     public function showQuestion($id) {
-        $question = \App\Question::findOrFail($id);
+        $question = Question::findOrFail($id);
 
-    //    return view("question")->with("question", $question);
         return view('question',['question'=> $question,'id'=>$id]);
     }
 
     public function checkAnswer(Request $request, $id) {
-
-        $question = \App\Question::findOrFail($id);
+        $question = Question::findOrFail($id);
         $correct_answer = $question['answer_correct'];
         $answer = $request->get('answer');
-//        dd($answer);
-//        dd($id, $correct_answer);
+
         if ($answer === $correct_answer) {
-            ++$id;
-            $question = \App\Question::findOrFail($id);
-            return view('question',['question'=> $question,'id'=>$id]);
+
+            return redirect()->route('show', ['id' => ++$id]);
         } else {
+
             return "Zła odpowiedź";
         }
-    //   Question::checkAnswer($request->all());
-
-    //    return redirect('/questions');
     }
 
     public function showAll() {
-        $questions = \App\Question::all();
+        $questions = Question::all();
         return view("question_list")->with("questions", $questions);
     }
 

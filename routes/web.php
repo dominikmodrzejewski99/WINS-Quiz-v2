@@ -17,14 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/q', function () {
-//    return view('question');
-//});
 
-Route::get('/a', 'QuestionController@answer');
 Route::get('/start', 'QuestionController@start');
 Route::get('/questions', 'QuestionController@showAll');
 Route::get('/add', 'QuestionController@create');
 Route::post('/add', 'QuestionController@store');
-Route::get('/show/{id}', 'QuestionController@showQuestion');
+Route::get('/show/{id}', 'QuestionController@showQuestion')->name('show');
 Route::post('/show/{id}', 'QuestionController@checkAnswer');
