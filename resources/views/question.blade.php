@@ -13,23 +13,23 @@
     <form action="/show/{{$id}}">
         @csrf
         <div>
-            <input type="radio" name="answer">
-            <label for="">{{$question['answer_a']}}</label>
+            <input type="radio" id="a" value="0" name="answer">
+            <label for="a">{{$question['answer_a']}}</label>
         </div>
 
         <div>
-            <input type="radio" id="dewey" name="answer">
-            <label for="dewey">{{$question['answer_b']}}</label>
+            <input type="radio" id="b" value="1" name="answer">
+            <label for="b">{{$question['answer_b']}}</label>
         </div>
 
         <div>
-            <input type="radio" id="louie" name="answer">
-            <label for="louie">{{$question['answer_c']}}</label>
+            <input type="radio" id="c" value="2" name="answer">
+            <label for="c">{{$question['answer_c']}}</label>
         </div>
 
         <div>
-            <input type="radio" id="louie" name="answer">
-            <label for="louie">{{$question['answer_d']}}</label>
+            <input type="radio" id="d" value="3" name="answer">
+            <label for="d">{{$question['answer_d']}}</label>
         </div>
 
         <button type="submit">Wyślij </button>
