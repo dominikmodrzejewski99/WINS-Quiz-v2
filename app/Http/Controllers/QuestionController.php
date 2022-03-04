@@ -51,7 +51,7 @@ class QuestionController extends Controller
         return "answer";
     }
 
-    public function start(): string {
-        return "Witaj w Quizie";
+    public function start() {
+        return view("start");
     }
 }
