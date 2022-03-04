@@ -20,8 +20,7 @@ class QuestionController extends Controller
         $questions_length = count(Question::all());
 
         if ($answer === $correct_answer) {
-            if((int)$id === (int)$questions_length) {
-
+            if((int)$id === $questions_length) {
 
                 return view("result");
             }
