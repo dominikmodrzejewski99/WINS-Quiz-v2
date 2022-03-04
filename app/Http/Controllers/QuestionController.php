@@ -16,7 +16,15 @@ class QuestionController extends Controller
     public function showQuestion($id) {
         $question = \App\Question::findOrFail($id);
 
-        return $question;
+    //    return view("question")->with("question", $question);
+        return view('question',['question'=> $question,'id'=>$id]);
+    }
+
+    public function checkAnswer(Request $request, $id) {
+        dd($request->all());
+   //     Question::checkAnswer($request->all());
+
+    //    return redirect('/questions');
     }
 
     public function showAll() {

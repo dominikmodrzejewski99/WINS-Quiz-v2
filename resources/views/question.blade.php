@@ -7,7 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>question</h1>
-    <p>{{$question}}</p>
+    <h1>Treść pytania {{$id}} </h1>
+    <p>{{$question['question']}}</p>
+    <p>Wskaż poprawną odpowiedź:</p>
+    <form action="/show/{{$id}}">
+        @csrf
+        <div>
+            <input type="radio" name="answer">
+            <label for="">{{$question['answer_a']}}</label>
+        </div>
+
+        <div>
+            <input type="radio" id="dewey" name="answer">
+            <label for="dewey">{{$question['answer_b']}}</label>
+        </div>
+
+        <div>
+            <input type="radio" id="louie" name="answer">
+            <label for="louie">{{$question['answer_c']}}</label>
+        </div>
+
+        <div>
+            <input type="radio" id="louie" name="answer">
+            <label for="louie">{{$question['answer_d']}}</label>
+        </div>
+
+        <button type="submit">Wyślij </button>
+    </form>
 </body>
 </html>
