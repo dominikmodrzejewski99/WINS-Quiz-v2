@@ -22,7 +22,7 @@ class CreateQuestionsTable extends Migration
             $table->text('answer_c');
             $table->text('answer_d');
             $table->string('answer_correct',8);
-            $table->string('quiz_name',255);
+            $table->string('quiz_name', 255)->default('WINS Quiz');
         });
     }
 

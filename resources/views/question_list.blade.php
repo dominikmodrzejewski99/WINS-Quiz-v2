@@ -7,7 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>question</h1>
-    <p>{{$question}}</p>
+    @isset($questions)
+        <h1>Lista pytań </h1>
+        @foreach($questions as $q)
+            <p>{{$q->question}}</p>
+        @endforeach
+    @endisset
+
 </body>
 </html>

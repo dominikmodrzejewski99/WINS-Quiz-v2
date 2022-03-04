@@ -24,3 +24,6 @@ Route::get('/', function () {
 Route::get('/q', 'QuestionController@index');
 Route::get('/a', 'QuestionController@answer');
 Route::get('/start', 'QuestionController@start');
+Route::get('/questions', 'QuestionController@showAll');
+Route::get('/add', 'QuestionController@create');
+Route::post('/add', 'QuestionController@store');
