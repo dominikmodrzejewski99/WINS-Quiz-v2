@@ -10,7 +10,7 @@
     <h1>Treść pytania {{$id}} </h1>
     <p>{{$question['question']}}</p>
     <p>Wskaż poprawną odpowiedź:</p>
-    <form action="/show/{{$id}}">
+    <form action="/show/{{$id}}" method="POST">
         @csrf
         <div>
             <input type="radio" id="a" value="0" name="answer">

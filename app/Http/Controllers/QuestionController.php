@@ -21,8 +21,20 @@ class QuestionController extends Controller
     }
 
     public function checkAnswer(Request $request, $id) {
-        dd($request->all());
-   //     Question::checkAnswer($request->all());
+
+        $question = \App\Question::findOrFail($id);
+        $correct_answer = $question['answer_correct'];
+        $answer = $request->get('answer');
+//        dd($answer);
+//        dd($id, $correct_answer);
+        if ($answer === $correct_answer) {
+            ++$id;
+            $question = \App\Question::findOrFail($id);
+            return view('question',['question'=> $question,'id'=>$id]);
+        } else {
+            return "Zła odpowiedź";
+        }
+    //   Question::checkAnswer($request->all());
 
     //    return redirect('/questions');
     }
