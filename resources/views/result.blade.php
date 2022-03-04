@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Ilość niepoprawnych odpowiedzi: </h1>
+    <div class="container">
+        <h1>Ilość niepoprawnych odpowiedzi: {{$score ?? 'nie ma wyniku'}} </h1>
+    </div>
 </body>
 </html>

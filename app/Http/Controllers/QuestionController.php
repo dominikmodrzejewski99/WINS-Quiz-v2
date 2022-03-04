@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
+    public static $score = 0;
+
     public function showQuestion($id, $wrong_answer = false) {
         $question = Question::findOrFail($id);
 
