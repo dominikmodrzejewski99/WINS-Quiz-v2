@@ -22,5 +22,5 @@ Route::get('/start', 'QuestionController@start');
 Route::get('/questions', 'QuestionController@showAll');
 Route::get('/add', 'QuestionController@create');
 Route::post('/add', 'QuestionController@store');
-Route::get('/show/{id}/{wrong_answer}', 'QuestionController@showQuestion')->name('show');
-Route::post('/show/{id}', 'QuestionController@checkAnswer');
+Route::get('/show/{id}/{wrong_answer}/{score}', 'QuestionController@showQuestion')->name('show');
+Route::post('/show/{id}/{wrong_answer}/{score}', 'QuestionController@checkAnswer');

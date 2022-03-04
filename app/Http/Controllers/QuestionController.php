@@ -9,13 +9,15 @@ class QuestionController extends Controller
 {
     public static $score = 0;
 
-    public function showQuestion($id, $wrong_answer = false) {
+    public function showQuestion($id, $wrong_answer = false, $score = 0) {
         $question = Question::findOrFail($id);
 
-        return view('question',['question'=> $question,'id'=>$id, 'wrong_answer' => $wrong_answer]);
+        return view('question', ['question' => $question, 'id' => $id, 'wrong_answer' => $wrong_answer, 'score' => $score]);
     }
 
-    public function checkAnswer(Request $request, $id) {
+    public function checkAnswer(Request $request, $id, $score = 0) {
+        $score = $score;
+        dump('score', $score);
         $question = Question::findOrFail($id);
         $correct_answer = $question['answer_correct'];
         $answer = $request->get('answer');
@@ -24,12 +26,15 @@ class QuestionController extends Controller
         if ($answer === $correct_answer) {
             if((int)$id === $questions_length) {
 
-                return view("result");
+                return view("result")->with('score', $score);
             }
-            return redirect()->route('show', ['id' => ++$id, 'wrong_answer' => 0]);
+            dd('1', $score);
+            return redirect()->route('show', ['id' => $id, 'wrong_answer' => 0, 'score' => $score]);
         } else {
 
-            return redirect()->route('show', ['id' => $id, 'wrong_answer' => true]);
+            (int)$score++;
+            dd('2', $score);
+            return redirect()->route('show', ['id' => $id, 'wrong_answer' => 1, 'score' => $score]);
         }
     }
 

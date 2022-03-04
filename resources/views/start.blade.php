@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/show/1/0" method="GET">
+    <form action="/show/1/0/0/" method="GET">
         <h1>Witaj w quizie!</h1>
         <button>Rozpocznij quiz</button>
     </form>
