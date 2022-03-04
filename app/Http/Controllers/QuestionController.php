@@ -13,6 +13,12 @@ class QuestionController extends Controller
         return view("question")->with("question", $question[0]->answer_correct);
     }
 
+    public function showQuestion($id) {
+        $question = \App\Question::findOrFail($id);
+
+        return $question;
+    }
+
     public function showAll() {
         $questions = \App\Question::all();
         return view("question_list")->with("questions", $questions);

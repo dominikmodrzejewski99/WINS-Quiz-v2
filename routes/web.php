@@ -27,3 +27,4 @@ Route::get('/start', 'QuestionController@start');
 Route::get('/questions', 'QuestionController@showAll');
 Route::get('/add', 'QuestionController@create');
 Route::post('/add', 'QuestionController@store');
+Route::get('/show/{id}', 'QuestionController@showQuestion');
