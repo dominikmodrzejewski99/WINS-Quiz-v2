@@ -24,3 +24,7 @@ Route::get('/add', 'QuestionController@create');
 Route::post('/add', 'QuestionController@store');
 Route::get('/show/{id}/{wrong_answer}/{score}', 'QuestionController@showQuestion')->name('show');
 Route::post('/show/{id}/{wrong_answer}/{score}', 'QuestionController@checkAnswer');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
