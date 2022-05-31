@@ -10,11 +10,11 @@
 </head>
 <body>
 <div class="container mt-5">
-    {{ dump($score) }}
+
     <h1>WINS Quiz </h1>
     <p >Pytanie {{$id}}</p>
     <p class="h2 my-5">{{$question['question']}}</p>
-    {{ dd('widok', $score) }}
+
     <form action="/show/{{$id}}/{{$score}}" method="POST">
         @csrf
         <div>
