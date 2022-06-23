@@ -15,7 +15,16 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        return Question::all();
+        return Question::all(
+            [
+                'id',
+                'question',
+                'answer_a',
+                'answer_b',
+                'answer_c',
+                'answer_d',
+            ]
+        );
     }
 
     /**

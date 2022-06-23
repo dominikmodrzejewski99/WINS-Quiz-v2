@@ -20,5 +20,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('question', Api\QuestionController::class);
-
-Route::apiResource('question', Api\QuestionController::class);
